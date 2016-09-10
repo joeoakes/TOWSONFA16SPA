@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+* {
+    box-sizing: border-box;
+}
+header {text-align: center}
+footer {text-align: center}
+[class*="col-"] {
+    float: left;
+    padding: 15px;
+    border: 10px solid red;
+}
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+</style>
+</head>
+<body>
+<header class="col-12">
+<h1>&lt;header&gt;</h1>
+</header>
+
+<nav class="col-3">
+<ul>
+<li>&lt;nav 1&gt;</li>
+<li>&lt;nav 2&gt;</li>
+<li>&lt;nav 3&gt;</li>
+<li>&lt;nav 4&gt;</li>
+</ul>
+</nav>
+<main class="col-6">
+<h3>&lt;main&gt;</h3>
+<article>
+    <h4>&lt;article&gt; www.lipsum.com filler</h4>
+    <p><mark>Lorem ipsum</mark> dolor sit amet, consectetur adipiscing elit. Suspendisse sit amet tincidunt dui. Nullam sed enim eu dolor dapibus dictum sed eleifend nulla. Maecenas ac nisl tristique, porta nisi eu, lacinia nunc. Mauris non velit placerat, ornare dui ut, convallis sem. </p>
+</article>
+</main>
+
+<aside class="col-3">
+ &lt;aside&gt;
+<svg width="100" height="100">
+  <circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" />
+</svg>
+</aside> 
+
+<footer class="col-12">
+    <details>
+        <summary>Copyright 1999-2014</summary>
+        <p>All Rights Reserved</p>
+    </details>
+</footer> 
+</body>
+</html>
