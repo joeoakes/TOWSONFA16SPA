@@ -1,0 +1,85 @@
+* {
+    box-sizing: border-box;
+}
+header {text-align: center; color: red}
+section {}
+main {}
+article {}
+aside {}
+footer {text-align: center}
+[class*="col-"] {
+    float: left;
+    padding: 15px;
+    border: 10px solid red;
+}
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+/* apply the style rule to the nav element */
+nav {
+    font-size: 16px;
+    /*Families: Serif Fonts, Sans-Serif Fonts, Monospace Fonts*/
+    /*font-family: "Times New Roman", Times, serif;*/
+    font-family: Tahoma, Geneva, sans-serif;  /* sans-serif generic family no barbs */
+    font-weight: bold; 
+    text-align: center;
+    text-shadow: 3px 2px 3px #333333; /*CSS 3 feature*/
+    background-color: red;   
+    border-radius: 8px; /*CSS 3 feature rounded edges*/
+}
+/* apply the style rule to the unordered list element in the nav area*/
+nav ul {
+    height: auto;
+    padding: 8px 0px;
+    margin: 0px;
+}
+/* apply the style rule to the list item element in the nav area*/
+nav li { 
+    display: inline; /*position text horizontally*/
+    padding: 20px; /* apply padding top, bottom, right, left */
+}
+/* Apply the style to the Anchor element in the nav area*/
+nav a {
+    text-decoration: none;  /*removes underline*/
+    color: #00F;    /* Red Green Blue - apply only the Blue color Channel*/
+    padding: 8px;   /* apply padding top, bottom, right, left */
+    /*padding: 8px 8px;
+    padding: 8px 8px 8px 8px;*/
+}
+/* Anchor in the nav area when the Mouse Hovers over the area - state*/
+nav a:hover {
+    color: #4cff00; /*Lime green*/
+    background-color: #FFF;   /* All color channels white */
+}
+/* unvisted link state */
+nav a:link {
+    color: green; 
+    background-color: #FFF;   /* All color channels white */
+}
+/* visted link state */
+nav a:visited {
+    color: greenyellow; 
+    background-color: #FFF;   /* All color channels white */
+}
+/* selected link state */
+nav a:active {
+    color: yellow; 
+    background-color: #FFF;   /* All color channels white */
+}
+footer li {
+    display: inline; /*position text horizontally*/
+    padding: 20px;   /* apply padding top, bottom, right, left */
+}
+footer a {
+    text-decoration: none; /*removes the underline*/
+}
