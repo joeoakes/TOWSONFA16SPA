@@ -78,6 +78,40 @@
             <li><a href="#contact" id="ftrContact">Contact Us</a></li>
         </ul>
     </footer> 
-    
+    <script>
+        //When the DOM document is loaded in the browser
+        $(document).ready(function () {
+            //When home link is clicked show home area
+            $("#navHome").click(function (event) {
+                $("#home").show();
+                $("#menu, #about, #terms, #site, #contact").hide();
+            });
+            //When menu link is clicked show menu area
+            $("#navMenu").click(function (event) {
+                $("#menu").show();
+                $("#home, #about, #terms, #site, #contact").hide();
+            });
+            //When about link is clicked show about area
+            $("#navAbout").click(function (event) {
+                $("#about").show();
+                $("#home, #menu, #terms, #site, #contact").hide();
+            });
+            //When terms link is clicked show terms area
+            $("#ftrTerms").click(function (event) {
+                $("#terms").show();
+                $("#home, #menu, #about, #site, #contact").hide();
+            });
+            //When site link is clicked show site area
+            $("#ftrsite").click(function (event) {
+                $("#site").show();
+                $("#home, #menu, #about, #terms, #contact").hide();
+            });
+            //When contact link is clicked show contact area
+            $("#ftrContact").click(function (event) {
+                $("#contact").show();
+                $("#home, #menu, #about, #terms, #site").hide();
+            });
+        });
+    </script>
 </body>
 </html>
