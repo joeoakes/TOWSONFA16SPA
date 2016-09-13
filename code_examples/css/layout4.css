@@ -41,40 +41,44 @@ nav {
 nav ul {
     height: auto;
     padding: 8px 0px;
-    margin: 0px;
 }
 /* apply the style rule to the list item element in the nav area*/
 nav li { 
     display: inline; /*position text horizontally*/
-    padding: 20px; /* apply padding top, bottom, right, left */
+    padding: 20px; /* apply padding top, right, bottom, left */
 }
 /* Apply the style to the Anchor element in the nav area*/
 nav a {
     text-decoration: none;  /*removes underline*/
     color: #00F;    /* Red Green Blue - apply only the Blue color Channel*/
-    padding: 8px;   /* apply padding top, bottom, right, left */
+    padding: 8px;   /* apply padding top, right, bottom, left */
     /*padding: 8px 8px;
     padding: 8px 8px 8px 8px;*/
 }
 /* Anchor in the nav area when the Mouse Hovers over the area - state*/
 nav a:hover {
     color: #4cff00; /*Lime green*/
-    background-color: #FFF;   /* All color channels white */
+    background-color: red;   /* All color channels white */
 }
-/* unvisted link state */
+/* unvisted link state
 nav a:link {
     color: green; 
     background-color: #FFF;   /* All color channels white */
 }
-/* visted link state */
+/* visted link state
 nav a:visited {
     color: greenyellow; 
     background-color: #FFF;   /* All color channels white */
 }
-/* selected link state */
+*/
+/* selected link state
 nav a:active {
     color: yellow; 
     background-color: #FFF;   /* All color channels white */
+}
+*/
+footer ul {
+    list-style-type:none;
 }
 footer li {
     display: inline; /*position text horizontally*/
