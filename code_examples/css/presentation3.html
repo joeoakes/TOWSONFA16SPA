@@ -19,38 +19,65 @@
     <!-- Browser title bar-->
     <title>Pizza Shop</title>
     
-    <!--CDN Content Delivery Network-->
+    <!-- CDN Content Delivery Network: Minified -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <!--Get Locally from our Server-->
-    <!--<script src="scripts/jquery.js"></script>-->
-    </head>
+    <!-- Get Locally from our Server-->
+    <!--<script src="js/jquery.js"></script>-->
+</head>
 <body>
-<!-- inline style rule will override internal and external rule -->
-<header style="color:purple" class="col-12">
-<h1>&lt;header&gt;</h1>
-</header>
+    <!-----------------------------BANNER AREA----------------------->
+    <!-- inline style rule will override internal and external rule -->
+    <header style="color:purple" class="col-12">
+        <h1>&lt;header&gt;</h1>
+    </header>
+    <!-----------------------------NAVIGATION AREA----------------------->
+    <nav class="col-3">
+        <ul>
+          <li><a href="#home" id="navHome" class="links" rel="home">Pizza Shop Home</a></li>
+          <li><a href="#menu" id="navMenu" class="links" rel="menu">Pizza Shop Menu</a></li>
+          <li><a href="#about" id="navAbout" class="links" rel="about">Pizza Shop About</a></li>
+        </ul>
+    </nav>
 
-<nav class="col-3">
-<ul>
-<li>&lt;nav 1&gt;</li>
-<li>&lt;nav 2&gt;</li>
-<li>&lt;nav 3&gt;</li>
-<li>&lt;nav 4&gt;</li>
-</ul>
-</nav>
+    <section class="col-6">
+        <!-----------------------------HOME AREA----------------------------->
+        <div id="home" style="display:block">
+            <h1>Home Page Section</h1>
+        </div>
+        <!-----------------------------MENU AREA----------------------------->
+        <div id="menu" style="display:none">
+            <h1>Menu Page Section</h1>
+        </div>
+        <!-----------------------------ABOUT AREA---------------------------->
+        <div id="about" style="display:none">
+            <h1>About Page Section</h1>
+        </div>
+        <!-----------------------------TERMS AREA----------------------------->
+        <div id="terms" style="display:none">
+            <h1>Terms Page Section</h1>
+        </div>
+        <!-----------------------------SITE AREA----------------------------->
+        <div id="site" style="display:none">
+            <h1>Site Map Page Section</h1>
+        </div>
+        <!-----------------------------CONTACT AREA---------------------------->
+        <div id="contact" style="display:none">
+            <h1>Contact Page Section</h1>
+        </div>
+    </section>
 
-<section class="col-6">
-<h1>&lt;section&gt;</h1>
-<p>Main content area</p>
-</section>
-
-<aside class="col-3">
- &lt;aside&gt;
-</aside> 
-
-<footer class="col-12">
- &lt;footer&gt;
-</footer> 
+    <aside class="col-3">
+        &lt;aside&gt;
+    </aside>
+    
+    <!-----------------------------FOOTER AREA---------------------------->
+    <footer class="col-12">
+        <ul>
+            <li><a href="#terms" id="ftrTerms">Terms of Use</a></li>
+            <li><a href="#site" id="ftrSite">Site Map</a></li>
+            <li><a href="#contact" id="ftrContact">Contact Us</a></li>
+        </ul>
+    </footer> 
     
 </body>
 </html>
