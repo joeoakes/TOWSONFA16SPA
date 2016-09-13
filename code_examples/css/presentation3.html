@@ -1,0 +1,56 @@
+<!-- declaration must be the very first thing in your HTML -->
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Metadata is always passed as name/value pairs.-->
+    <!-- UTF-8 - Character encoding for Unicode -->
+    <meta charset="utf-8" />
+    <meta name="description" content="Pizza Shop">
+    <meta name="keywords" content="Pizza, ">
+    <meta name="author" content="Joe Oakes">
+    
+    <!--This is an external style sheet reference-->
+    <link rel="stylesheet" type="text/css" href="layout3.css" />
+    <style>
+    /* internal style rule will override the external rule */
+    header{color: blue}
+    </style>
+    
+    <!-- Browser title bar-->
+    <title>Pizza Shop</title>
+    
+    <!--CDN Content Delivery Network-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <!--Get Locally from our Server-->
+    <!--<script src="scripts/jquery.js"></script>-->
+    </head>
+<body>
+<!-- inline style rule will override internal and external rule -->
+<header style="color:purple" class="col-12">
+<h1>&lt;header&gt;</h1>
+</header>
+
+<nav class="col-3">
+<ul>
+<li>&lt;nav 1&gt;</li>
+<li>&lt;nav 2&gt;</li>
+<li>&lt;nav 3&gt;</li>
+<li>&lt;nav 4&gt;</li>
+</ul>
+</nav>
+
+<section class="col-6">
+<h1>&lt;section&gt;</h1>
+<p>Main content area</p>
+</section>
+
+<aside class="col-3">
+ &lt;aside&gt;
+</aside> 
+
+<footer class="col-12">
+ &lt;footer&gt;
+</footer> 
+    
+</body>
+</html>
