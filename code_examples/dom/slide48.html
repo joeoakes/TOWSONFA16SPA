@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Slide 48 onsubmit attribute</title>
+   <script type="text/javascript">
+       function greeting() {
+           alert("Welcome " + document.forms["frm1"]["fname"].value + "!");
+       }
+   </script>
+</head>
+<body>
+   <form name="frm1" action="submit.htm" onsubmit="greeting()">
+    Enter your first name: <input type="text" name="fname" />
+       <input type="submit" value="Submit" />
+   </form>
+</body>
+</html>
