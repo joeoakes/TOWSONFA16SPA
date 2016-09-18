@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Slide 19 Store the element in a new Object</title>
+</head>
+<body>
+     <h1></h1>
+    <p>
+        <a href="http://www.ebay.com">link to ebay</a>
+        <a href="http://www.apple.com">link to apple</a>
+        <a href="http://www.cnn.com">link to cnn</a>
+    </p>
+    <script type="text/javascript">
+        //Better way using a variable array to store the <a> node objects
+        var links = document.getElementByTagName("a");
+        for (var i = 0; i < (links.length); i++){
+            alert(links[i].innerHTML);
+        }
+    </script>
+</body>
+</html>
