@@ -1,0 +1,117 @@
+<!-- declaration must be the very first thing in your HTML -->
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Metadata is always passed as name/value pairs.-->
+    <!-- UTF-8 - Character encoding for Unicode -->
+    <meta charset="utf-8" />
+    <meta name="description" content="Pizza Shop">
+    <meta name="keywords" content="Pizza, ">
+    <meta name="author" content="Joe Oakes">
+    
+    <!--This is an external style sheet reference-->
+    <link rel="stylesheet" type="text/css" href="layout3.css" />
+    <style>
+    /* internal style rule will override the external rule */
+    header{color: blue}
+    </style>
+    
+    <!-- Browser title bar-->
+    <title>Pizza Shop</title>
+    
+    <!-- CDN Content Delivery Network: Minified -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <!-- Get Locally from our Server-->
+    <!--<script src="js/jquery.js"></script>-->
+</head>
+<body>
+    <!-----------------------------BANNER AREA----------------------->
+    <!-- inline style rule will override internal and external rule -->
+    <header style="color:purple" class="col-12">
+        <h1>&lt;header&gt;</h1>
+    </header>
+    <!-----------------------------NAVIGATION AREA----------------------->
+    <nav class="col-3">
+        <ul>
+          <li><a href="#home" id="navHome" class="links" rel="home">Pizza Shop Home</a></li>
+          <li><a href="#menu" id="navMenu" class="links" rel="menu">Pizza Shop Menu</a></li>
+          <li><a href="#about" id="navAbout" class="links" rel="about">Pizza Shop About</a></li>
+        </ul>
+    </nav>
+
+    <section class="col-6">
+        <!-----------------------------HOME AREA----------------------------->
+        <div id="home" style="display:block">
+            <h1>Home Page Section</h1>
+        </div>
+        <!-----------------------------MENU AREA----------------------------->
+        <div id="menu" style="display:none">
+            <h1>Menu Page Section</h1>
+        </div>
+        <!-----------------------------ABOUT AREA---------------------------->
+        <div id="about" style="display:none">
+            <h1>About Page Section</h1>
+        </div>
+        <!-----------------------------TERMS AREA----------------------------->
+        <div id="terms" style="display:none">
+            <h1>Terms Page Section</h1>
+        </div>
+        <!-----------------------------SITE AREA----------------------------->
+        <div id="site" style="display:none">
+            <h1>Site Map Page Section</h1>
+        </div>
+        <!-----------------------------CONTACT AREA---------------------------->
+        <div id="contact" style="display:none">
+            <h1>Contact Page Section</h1>
+        </div>
+    </section>
+
+    <aside class="col-3">
+        &lt;aside&gt;
+    </aside>
+    
+    <!-----------------------------FOOTER AREA---------------------------->
+    <footer class="col-12">
+        <ul>
+            <li><a href="#terms" id="ftrTerms">Terms of Use</a></li>
+            <li><a href="#site" id="ftrSite">Site Map</a></li>
+            <li><a href="#contact" id="ftrContact">Contact Us</a></li>
+        </ul>
+    </footer> 
+    <script>
+        //When the DOM document is loaded in the browser
+        $(document).ready(function () {
+            //When home link is clicked show home area
+            $("#navHome").click(function (event) {
+                $("#home").show();
+                $("#menu, #about, #terms, #site, #contact").hide();
+            });
+            //When menu link is clicked show menu area
+            $("#navMenu").click(function (event) {
+                $("#menu").show();
+                $("#home, #about, #terms, #site, #contact").hide();
+            });
+            //When about link is clicked show about area
+            $("#navAbout").click(function (event) {
+                $("#about").show();
+                $("#home, #menu, #terms, #site, #contact").hide();
+            });
+            //When terms link is clicked show terms area
+            $("#ftrTerms").click(function (event) {
+                $("#terms").show();
+                $("#home, #menu, #about, #site, #contact").hide();
+            });
+            //When site link is clicked show site area
+            $("#ftrsite").click(function (event) {
+                $("#site").show();
+                $("#home, #menu, #about, #terms, #contact").hide();
+            });
+            //When contact link is clicked show contact area
+            $("#ftrContact").click(function (event) {
+                $("#contact").show();
+                $("#home, #menu, #about, #terms, #site").hide();
+            });
+        });
+    </script>
+</body>
+</html>
