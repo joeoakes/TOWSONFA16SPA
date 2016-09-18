@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Slide 23 Get the element ID and use wildcard</title>
+</head>
+<body>
+     <h1></h1>
+    <p id="links">
+        <a href="http://www.ebay.com">link to ebay</a>
+        <a href="http://www.apple.com">link to apple</a>
+        <a href="http://www.cnn.com">link to cnn</a>
+    </p>
+    <script type="text/javascript">
+        //Using a wildcard * to find child nodes
+        var elementP = document.getElementById("links");
+        var allElementNodes = elementP.getElementsByTagName("*");
+        alert(allElementNodes.length);
+    </script>
+</body>
+</html>
