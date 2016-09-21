@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+<head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+ <title>Slide 5 jQuery: Launching Code on Document Ready</title>
+</head>
+<body>
+    <a href="http://jquery.com/">jQuery</a>
+    <script>
+        //code as soon as the document is ready to be manipulated
+        $(document).ready(function () {
+            $("a").click(function(event){
+                alert("the link will not longer take you to jquery.com");
+	         event.preventDefault();
+            });
+        });
+</script>
+</body>
+</html>
+

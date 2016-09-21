@@ -1,0 +1,19 @@
+<!doctype html>
+<html><head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js">
+</script><title>Slide 21 jQuery: Chaining</title>
+<style>a.test {font-weight: bold;}</style>
+</head>
+<body>
+<div id="content">
+<h3>1. Heading 3 type</h3>
+<h3>2. Heading 3 type</h3>
+<h3>3. Heading 3 type</h3>
+</div>
+<script>
+//Chaining
+$(document).ready(function () {
+$("#content").find("h3").eq(0).html("new text for the first h3!");
+$("#content").find("h3").eq(2).html("new text for the third h3!");
+});
+</script></body></html>

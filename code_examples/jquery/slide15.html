@@ -1,0 +1,26 @@
+<!doctype html>
+<html><head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js">
+</script>
+<title>Slide 15 jQuery: Selecting Elements</title>
+<style>a.test {font-weight: bold;}</style>
+</head>
+<body>
+<a id="myId" class="myClass" href="http://www.ebay.com">ebay</a>
+<input type="button" name="first_name" id="change" value="Change">
+<ul class="people"><li>List Item 1</li></ul>
+<script>
+$(document).ready(function () {
+//Selecting Elements by tag
+if ($("a").length) { alert("found a element"); }
+//Selecting Elements by ID
+if ($("#myId").length) { alert("found myId element"); }
+//Selecting Elements by Class Name
+if ($(".myClass").length) { alert("found myClass element"); }
+//Selecting Elements by Attribute
+if ($("input[name='first_name']").length) { alert("found attribute element"); }
+//Selecting Elements by Compound CSS Selector
+if ($("ul.people li").length) { alert("found compound element"); }
+});
+</script></body></html>
+

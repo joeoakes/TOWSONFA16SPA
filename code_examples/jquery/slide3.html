@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+   <title>Demo</title>
+</head>
+<body>
+    <script>
+        //JavaScript way using onload function: code runs after the browser finishes loading the document
+        //Issue: the code doesn't run until all images are finished downloading
+        window.onload = function () {
+            alert("welcome");
+        }
+
+        //jQuery way using .ready event
+        //code as soon as the document is ready to be manipulated
+        $(document).ready(function () {
+            alert("welcome");
+        });
+</script>
+</body>
+</html>
+

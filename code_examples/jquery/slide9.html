@@ -1,0 +1,23 @@
+<!doctype html> <html><head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+ <title>Slide 9 jQuery: Remove Attributes</title>    
+<style>        
+        a.test {font-weight: bold;}
+    </style>
+</head>
+<body>
+    <a href="http://jquery.com/">jQuery</a>
+    <input type="button" id="change" value="Change" />
+    <script>
+        //code as soon as the document is ready to be manipulated
+        $(document).ready(function () {
+            $("a").addClass("test");
+            //This will remove a class attribute to the <a> tag
+            $("#change").click(function(){
+                $("a").removeClass("test");
+            });
+        });
+</script>
+</body>
+</html>
+

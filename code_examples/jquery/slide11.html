@@ -1,0 +1,22 @@
+<!doctype html> 
+<html>
+<head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <title>Slide 11 jQuery: Attributes: Setters and Getters</title>
+    <style>a.test {font-weight: bold;}</style>
+</head>
+<body>
+    <a>ebay</a>
+    <input type="button" id="change" value="Change" />
+    <script>
+        $(document).ready(function () {
+            //The .attr() method acts as both a getter and a setter
+            //Setter
+            $("a").attr("href", "http://www.ebay.com");
+            //Getter
+            alert($("a").attr("href"));  
+        });
+</script>
+</body>
+</html>
+

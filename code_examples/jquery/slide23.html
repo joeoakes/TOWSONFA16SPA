@@ -1,0 +1,28 @@
+<!doctype html>
+<html><head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js">
+</script>
+<title>Slide 23 jQuery: Manipulating Elements - HTML</title>
+<style>a.test {font-weight: bold;}</style>
+</head>
+<body>
+<div id="content">
+<h3>1. Heading 3 type</h3>
+<h3>2. Heading 3 type</h3>
+<h3>3. Heading 3 type</h3>
+<input type="text" id="textbox" value="default" />
+</div> 
+<script>
+//Chaining
+$(document).ready(function () {
+//.html() – Get or set the HTML contents.
+$("#content").find("h3").eq(0).html("<span style='color:red'>first h3!</span>");
+//.text() – Get or set the text contents; HTML will be stripped.
+$("#content").find("h3").eq(1).text("new text for the second h3!");
+//.attr() – Get or set the value of the provided attribute.
+$("#content").find("h3").eq(2).attr("id", "LastHeading");
+//.val() – Get or set the value of form elements.
+$("#content").find("input").val("new Value");
+});
+</script></body></html>
+
