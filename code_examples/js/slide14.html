@@ -1,0 +1,14 @@
+<html><head><title></title></head><body>
+<button onclick="displayDate()">Get Date</button>
+ <p id="paragraph1"></p>
+ <h1 onclick="this.innerHTML='Clicked'">Click on this text!</h1>
+ <h1 onclick="changetext(this)">Click on this text!</h1>
+<script>
+function displayDate() {
+            document.getElementById("paragraph1").innerHTML = Date();
+        }
+function changetext(id) {
+            id.innerHTML = "Clicked";
+        }
+</script>
+</body></html>

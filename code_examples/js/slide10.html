@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+<head>
+    <title>Slide 4 JavaScript</title>
+    <script>
+	console.clear()
+	var global_var = 'I am global';
+	function prison(){
+	  var prisoner = 'I am local';
+          console.log(prisoner);
+	}
+	prison();  //Calls the function
+	console.log(global_var); //Global variable is in scope
+	console.log(prisoner);  //Local variable is out of scope
+    </script>
+</head>
+<body>
+</body>
+</html>
