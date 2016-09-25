@@ -1,0 +1,18 @@
+<!doctype html>
+<html><head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js">
+</script><title>Slide 36 jQuery: Adding Elements</title>
+<style>a.test {font-weight: bold;}</style>
+</head>
+<body>
+<ul id="myList">
+<li>List item 1</li>
+<li>List item 2</li>
+</ul>
+<script>
+$(document).ready(function () {
+// Adding new elements
+var $myNewElement = $("<li>New element</li>");
+$myNewElement.appendTo("#myList");
+});
+</script></body></html>

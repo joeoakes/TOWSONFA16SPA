@@ -1,0 +1,23 @@
+<!doctype html>
+<html><head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js">
+</script><title>Slide 30 jQuery: Moving Elements</title>
+<style>a.test {font-weight: bold;}</style>
+</head>
+<body>
+<ul id="myList">
+<li>List item 1</li>
+<li>List item 2</li>
+</ul>
+<script>
+//Chaining
+$(document).ready(function () {
+// insertAfter() method places the selected element(s) after the element that provided as an argument
+// .after() method places the element provided as an argument after the selected element
+// .insertBefore() and .before()
+// .appendTo() and .append()
+// .prependTo() and .prepend()
+$("#myList").append($("#myList li:first"));
+});
+</script></body></html>
+

@@ -1,0 +1,19 @@
+<!doctype html><html><head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js">
+</script>
+<title>Slide 40 jQuery: Adding Elements</title>
+</head>
+<body>
+<ul id="myList">
+</ul>
+<script>
+$(document).ready(function () {
+//Add 10 list items to the unordered list
+var myItems = []; //Array
+var $myList = $("#myList");
+for (var i = 0; i < 10; i++) {
+myItems.push("<li>item " + i + "</li>"); //Push onto the array
+}
+$myList.append(myItems.join(""));
+});
+</script></body></html>
