@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+<head>
+    <title>Slide 17 JavaScript Syntax Arrays</title>
+    <script>
+	console.clear()
+	var team = Array("Joe", "Jim", "John", "Steve");
+	var team = ["Joe", "Jim", "John", "Steve"]; //works too
+	var years = Array(1965, 1970, 1975, 1980);
+	var student1 = Array("Joe", 1965, false); //Mixture
+	var student2 = Array("Jim", 1970, true); //Mixture
+	//Arrays can hold Arrays
+	var students = Array(student1, student2)
+	console.log(students[0][0]);  //Shows Joe
+	console.log(team[0], team[3]);
+	console.log(years[0], years[3]);
+    </script>
+</head>
+<body>
+</body>
+</html>
