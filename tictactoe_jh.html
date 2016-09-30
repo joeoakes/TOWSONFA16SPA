@@ -74,24 +74,24 @@ $(document).ready(function () {
     // Check for a win or game over
     // function checkMove(char) {
     //     // Horizontal check
-    //     var XFlag = 0;
-    //     var OFlag = 0;
+    //     var xFlag = 0;
+    //     var oFlag = 0;
     //     var temp = "";
     //     var rows = numberOfBtnsPerRow;
     //     for (var i = 1; i <= rows; i++) {
     //         temp = $("#btn"+[i]).val();
     //         if ( char === temp ) {
     //             if ( char === 'X') {
-    //                 XFlag++;
-    //                 console.log("X  Xflag = " + XFlag);
-    //                 if (XFlag === 3) {
+    //                 xFlag++;
+    //                 console.log("X  xFlag = " + xFlag);
+    //                 if (xFlag === 3) {
     //                     console.log("X WINS!!!!!!!!!!!!!!!!");
     //                 }
     //             }
     //             else {
-    //                 OFlag++;
-    //                 console.log("X  Xflag = " + XFlag);
-    //                 if(OFlag === 3) {
+    //                 oFlag++;
+    //                 console.log("X  xFlag = " + xFlag);
+    //                 if(oFlag === 3) {
     //                     console.log("O WINS! ! ! ! ! !");
 
     //                 }
@@ -116,8 +116,8 @@ $(document).ready(function () {
 
     var matrix = [
       ["X", "O", "X"],
-      ["O", "O", "O"],
-      ["X", "X", "X"]
+      ["O", "O", "X"],
+      ["X", "O", "X"]
     ];
 
     // dynamically create matrix
@@ -128,29 +128,56 @@ $(document).ready(function () {
     }
 
     // horizontal test
-    var XFlag = 0;
-    var OFlag = 0;
+    var xFlag = 0;
+    var oFlag = 0;
     for (var i = 0; i < 3; i++) {
         for (var j = 0; j < 3; j++) {
             if ( matrix[i][j] === "X" ) {
-                XFlag++;
-                console.log("XFlag ij= " + XFlag + " > [" + i + "] [" + j + "]");
+                xFlag++;
+                console.log("xFlag ij= " + xFlag + " > [" + i + "] [" + j + "]");
             }
             else if ( matrix[i][j] === "O" ) {
-                OFlag++;
-                console.log("OFlag ij= " + OFlag + " > [" + i + "] [" + j + "]");
+                oFlag++;
+                console.log("oFlag ij= " + oFlag + " > [" + i + "] [" + j + "]");
             }
         }
         console.log("row")
-        if ( XFlag === 3 ) {
-            console.log("X wins");
+        if ( xFlag === 3 ) {
+            console.log("X wins horizontally");
         }
-        else if ( OFlag === 3 ) {
-            console.log("O wins");
+        else if ( oFlag === 3 ) {
+            console.log("O wins horizontally");
         }
-        XFlag = 0;
-        OFlag = 0;
+        xFlag = 0;
+        oFlag = 0;
     }
+
+    // vertical test
+    var xFlagVert = 0;
+    var oFlagVert = 0;
+    for (var i = 0; i < 3; i++) {
+        for (var j = 0; j < 3; j++) {
+            if ( matrix[j][i] === "X" ) {
+                xFlagVert++;
+                console.log("xFlagVert ji= " + xFlagVert + " > [" + j + "] [" + i + "]");
+            }
+            else if ( matrix[j][i] === "O" ) {
+                oFlagVert++;
+                console.log("oFlagVert ji= " + oFlagVert + " > [" + j + "] [" + i + "]");
+            }
+        }
+        console.log("col")
+        if ( xFlagVert === 3 ) {
+            console.log("X wins vertically");
+        }
+        else if ( oFlagVert === 3 ) {
+            console.log("O wins vertically");
+        }
+        xFlagVert = 0;
+        oFlagVert = 0;
+    }
+
+    // build matrix or figure how to test as matrix
 
     // vertical test
 
