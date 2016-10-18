@@ -2,7 +2,18 @@ var appRouter = function(app) {
 
 app.get("/Create", function(req, res) {
     res.header("Access-Control-Allow-Origin", "*");
-    res.send("Hello World");
+    if(!req.query.studentName) {
+        return res.send({"status": "error", "message": "missing student Name"});
+    } else {
+    var student = {
+        "StudentID": "123",
+        "StudentName": req.query.studentName,
+        "StudentSSN" : req.query.studentSSN,
+        "StudentEmail" : req.query.studentEmail,
+        "StudentPhone" : req.query.studentPhone
+        }
+        return res.send(student);
+    }
 });
 
 app.get("/Read", function(req, res) {
@@ -14,7 +25,14 @@ app.get("/Read", function(req, res) {
 	"StudentEmail" : "joe.oakes@psu.edu",
 	"StudentPhone" : "2157778888"
 	}
-    res.send(student);
+    if(!req.query.studentID) {
+        return res.send({"status": "error", "message": "missing studentID"});
+    } else if(req.query.studentID != student.StudentID) {
+        return res.send({"status": "error", "message": "wrong studentID"});
+    } else {
+        return res.send(student);
+    }
+
 });
 
 app.get("/Update", function(req, res) {
