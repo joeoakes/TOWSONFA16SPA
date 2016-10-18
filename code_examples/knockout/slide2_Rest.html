@@ -19,7 +19,7 @@
                 response: ko.observable(),
                 onSubmit: function(formElement) {
                     //Make sure to change the host and port to match the URL 
-                    var query = "http://localhost:27206/RESTService.svc/Create?";
+                    var query = "http://localhost:3000/Create?";
                     query += "studentName=" + viewModel.studentName();
                     query += "&studentSSN=" + viewModel.studentSSN();
                     query += "&studentEmail=" + viewModel.studentEmail();

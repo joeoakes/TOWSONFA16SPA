@@ -19,7 +19,7 @@
                 studentSSN: ko.observable(), studentEmail: ko.observable(),
                 studentPhone: ko.observable(), response: ko.observable(),
                 onSubmit: function (formElement) {
-	      var query = "http://localhost:27206/RESTService.svc/Update?";
+	      var query = "http://localhost:3000/Update?";
                     query += "studentID=" + viewModel.studentID();
                     query += "&studentName=" + viewModel.studentName();
                     query += "&studentSSN=" + viewModel.studentSSN();

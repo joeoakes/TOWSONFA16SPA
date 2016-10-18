@@ -19,7 +19,7 @@
                 studentPhone: ko.observable(),
                 onSubmit: function (formElement) {
                     //Make sure to change the host and port to match the URL 
-                    var query = "http://localhost:27206/RESTService.svc/Read?";
+                    var query = "http://localhost:3000/Read?";
                     query += "studentID=" + viewModel.studentID();
                     $.ajax({ url: query, crossDomain: true, dataType: 'json', type: 'GET' })
                         .done(function (json) {
