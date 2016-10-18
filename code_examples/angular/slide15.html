@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head><meta charset="utf-8" /><title></title>
+    <script 
+        type="text/javascript" 
+        src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.14/angular.min.js">
+    </script>
+</head>
+<body>
+<div data-ng-app>
+<div data-ng-controller="foodController">
+    My name is {{ name }} and my favorite sport is {{ sport }}.
+</div>
+        <script>
+            // $scope is an object
+            function foodController($scope) {
+                $scope.name = "Joe Oakes";
+                $scope.sport = "MTB";
+            }
+    </script>
+</body></html>
