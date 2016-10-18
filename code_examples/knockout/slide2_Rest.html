@@ -26,7 +26,7 @@
                     query += "&studentPhone=" + viewModel.studentPhone();
                     $.ajax({ url: query, crossDomain: true, dataType: 'json', type: 'GET' })
                         .done(function (json) {
-                            viewModel.response(json);
+                            viewModel.response(json.result);
                         })
                         .fail(function () {
                             alert("Error");

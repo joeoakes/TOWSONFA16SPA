@@ -12,7 +12,7 @@ app.get("/Create", function(req, res) {
         "StudentEmail" : req.query.studentEmail,
         "StudentPhone" : req.query.studentPhone
         }
-        return res.send(student);
+        return res.send({"result" : "passed"});
     }
 });
 
