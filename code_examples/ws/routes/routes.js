@@ -1,5 +1,13 @@
 var appRouter = function(app) {
 
+app.get('/', function (req, res) {
+  res.render('index', { title: 'Hey', message: 'Hello there!'});
+});
+
+app.get('/slide6', function (req, res) {
+  res.render('slide6', { title: 'slide6'});
+});
+
 app.get("/Create", function(req, res) {
     res.header("Access-Control-Allow-Origin", "*");
     if(!req.query.studentName) {
@@ -45,7 +53,7 @@ app.get("/Delete", function(req, res) {
     res.send("Hello World");
 });
 
-app.get("/", function(req, res) {
+app.get("/hello", function(req, res) {
     res.send("Hello World");
 });
 
