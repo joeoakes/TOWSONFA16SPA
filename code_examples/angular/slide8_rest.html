@@ -21,10 +21,10 @@ CTYPE html>
             //Make sure to change the host and port to match the URL 
             var query = "http://localhost:3000/CreateStudent";
             var tblStudent = {
-                fldStudentName: $scope.studentName,
-                fldStudentSSN: $scope.studentSSN,
-                fldStudentEmail: $scope.studentEmail,
-                fldStudentPhone: $scope.studentPhone
+                StudentName: $scope.studentName,
+                StudentSSN: $scope.studentSSN,
+                StudentEmail: $scope.studentEmail,
+                StudentPhone: $scope.studentPhone
             };
             $.ajax({
                 url: query,

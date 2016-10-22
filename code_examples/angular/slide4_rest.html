@@ -22,11 +22,11 @@
             query += "studentID=" + $scope.studentID;
             $.ajax({ url: query, crossDomain: true, dataType: 'json', type: 'GET' })
                 .done(function (json) {
-                    $scope.studentID = json.fldStudentID;
-                    $scope.studentName = json.fldStudentName;
-                    $scope.studentSSN = json.fldStudentSSN;
-                    $scope.studentEmail = json.fldStudentEmail;
-                    $scope.studentPhone = json.fldStudentPhone;
+                    $scope.studentID = json.StudentID;
+                    $scope.studentName = json.StudentName;
+                    $scope.studentSSN = json.StudentSSN;
+                    $scope.studentEmail = json.StudentEmail;
+                    $scope.studentPhone = json.StudentPhone;
                     $scope.$apply();
                 })
                 .fail(function () {
