@@ -1,0 +1,39 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml">
+<head><title>Angular Rest Read</title>
+<!--Using a content delivery network - watch if they go down so does your site-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.14/angular.min.js"></script>
+</head>
+  <body data-ng-app>
+    <form data-ng-submit="submit()" data-ng-controller="Ctrl">
+    <p>Student ID: <input data-ng-model="studentID" /></p>
+    <p>Student Name: <input data-ng-model="studentName" /></p>
+    <p>Student SSN: <input data-ng-model="studentSSN" /></p>
+    <p>Student Email: <input data-ng-model="studentEmail" /></p>
+    <p>Student Phone: <input data-ng-model="studentPhone" /></p>
+    <p><input type="submit" id="submit" value="Submit" /></p>
+    </form>
+</body>
+<script type="text/javascript">
+    function Ctrl($scope) {
+        $scope.submit = function () {
+            //Make sure to change the host and port to match the URL 
+            var query = "http://localhost:3000/Read?";
+            query += "studentID=" + $scope.studentID;
+            $.ajax({ url: query, crossDomain: true, dataType: 'json', type: 'GET' })
+                .done(function (json) {
+                    $scope.studentID = json.fldStudentID;
+                    $scope.studentName = json.fldStudentName;
+                    $scope.studentSSN = json.fldStudentSSN;
+                    $scope.studentEmail = json.fldStudentEmail;
+                    $scope.studentPhone = json.fldStudentPhone;
+                    $scope.$apply();
+                })
+                .fail(function () {
+                    alert("Error");
+                });
+        }
+    }
+</script>
+</html>
+
