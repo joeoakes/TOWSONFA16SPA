@@ -8,6 +8,42 @@ app.get('/slide6', function (req, res) {
   res.render('slide6', { title: 'slide6'});
 });
 
+app.get('/slide8', function (req, res) {
+  res.render('slide8', { title: 'slide8'});
+});
+
+app.get('/slide9', function (req, res) {
+  res.render('slide9', { title: 'slide9'});
+});
+
+app.get('/slide10', function (req, res) {
+  res.render('slide10', { title: 'slide10'});
+});
+
+app.get('/slide11', function (req, res) {
+  res.render('slide11', { title: 'slide11'});
+});
+
+app.get('/slide12', function (req, res) {
+  res.render('slide12', { title: 'slide12'});
+});
+
+app.get('/slide13', function (req, res) {
+  res.render('slide13', { title: 'slide13'});
+});
+
+app.get('/slide14', function (req, res) {
+  res.render('slide14', { title: 'slide14'});
+});
+
+app.get('/slide15', function (req, res) {
+  res.render('slide15', { title: 'slide15'});
+});
+
+app.get('/slide16', function (req, res) {
+  res.render('slide16', { title: 'slide16'});
+});
+
 app.get("/Create", function(req, res) {
     res.header("Access-Control-Allow-Origin", "*");
     if(!req.query.studentName) {
