@@ -20,10 +20,10 @@
         $scope.submit = function () {
             //Make sure to change the host and port to match the URL 
             var query = "http://localhost:3000/Create?";
-            query += "studentName=" + $scope.StudentName;
-            query += "&studentSSN=" + $scope.StudentSSN;
-            query += "&studentEmail=" + $scope.StudentEmail;
-            query += "&studentPhone=" + $scope.StudentPhone;
+            query += "studentName=" + $scope.studentName;
+            query += "&studentSSN=" + $scope.studentSSN;
+            query += "&studentEmail=" + $scope.studentEmail;
+            query += "&studentPhone=" + $scope.studentPhone;
             $.ajax({ url: query, crossDomain: true, dataType: 'json', type: 'GET' })
             .done(function (json) {
                 $scope.response = json;
