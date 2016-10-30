@@ -44,6 +44,20 @@ app.get('/slide15', function (req, res) {
    });
 });
 
+app.get('/slide17', function (req, res) {
+    res.render('slide17', {
+        layout: 'slide',
+        title: "My First Blog Post!",
+        author: {
+          id: 47,
+           name: "John Smith"
+         },
+        body: "My first post."
+   });
+});
+
+
+
 var server = app.listen(3000, function () {
     console.log("Listening on port %s...", server.address().port);
 });
