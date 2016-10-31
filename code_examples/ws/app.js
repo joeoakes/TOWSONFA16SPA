@@ -1,12 +1,10 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 var app = express();
-var mongodb = require('mongodb');
  
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
  
-var MongoClient = mongodb.MongoClient;
 var routes = require("./routes/routes.js")(app);
 
 app.set('view engine', 'pug');
@@ -15,19 +13,3 @@ var server = app.listen(3000, function () {
     console.log("Listening on port %s...", server.address().port);
 });
 
-var url = 'mongodb://localhost:27017/my_database_name';
-
-// Use connect method to connect to the Server
-MongoClient.connect(url, function (err, db) {
-  if (err) {
-    console.log('Unable to connect to the mongoDB server. Error:', err);
-  } else {
-    //HURRAY!! We are connected. :)
-    console.log('Connection established to', url);
-
-    // do some work here with the database.
-
-    //Close connection
-    db.close();
-  }
-});

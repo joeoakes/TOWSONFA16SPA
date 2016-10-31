@@ -45,9 +45,6 @@ app.get('/slide16', function (req, res) {
 });
 
 app.get("/Create", function(req, res) {
-var mongodb = require('mongodb');
-var MongoClient = mongodb.MongoClient;
-
     res.header("Access-Control-Allow-Origin", "*");
     if(!req.query.studentName) {
         return res.send({"status": "error", "message": "missing student Name"});
@@ -58,20 +55,10 @@ var MongoClient = mongodb.MongoClient;
         "StudentSSN" : req.query.studentSSN,
         "StudentEmail" : req.query.studentEmail,
         "StudentPhone" : req.query.studentPhone
-        } //Close student
-        var url = 'mongodb://localhost:27017/my_database_name';
-        MongoClient.connect(url, function (err, db) {
-        if (err) {
-          return res.send({"result" : "failed"});
-        } else {
-          var collection = db.collection('users');
-	  collection.insert({"student" : "123"}); 
-          db.close();
-          return res.send({"result" : "passed"});
-         }  //close if
-        }); //close function
-    } //close else
-}); //Close app.get
+        }
+        return res.send({"result" : "passed"});
+    }
+});
 
 app.get("/Read", function(req, res) {
     res.header("Access-Control-Allow-Origin", "*");

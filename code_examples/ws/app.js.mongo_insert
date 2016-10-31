@@ -1,0 +1,49 @@
+var express = require("express");
+var bodyParser = require("body-parser");
+var app = express();
+var mongodb = require('mongodb');
+ 
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+ 
+var MongoClient = mongodb.MongoClient;
+var routes = require("./routes/routes.js")(app);
+
+app.set('view engine', 'pug');
+
+var server = app.listen(3000, function () {
+    console.log("Listening on port %s...", server.address().port);
+});
+
+var url = 'mongodb://localhost:27017/my_database_name';
+
+// Use connect method to connect to the Server
+MongoClient.connect(url, function (err, db) {
+  if (err) {
+    console.log('Unable to connect to the mongoDB server. Error:', err);
+  } else {
+    //Connected
+    console.log('Connection established to', url);
+
+    var collection = db.collection('users');
+    
+    // do some work here with the database.
+    //Create some users
+    var user1 = {name: 'modulus admin', age: 42, roles: ['admin', 'moderator', 'user']};
+    var user2 = {name: 'modulus user', age: 22, roles: ['user']};
+    var user3 = {name: 'modulus super admin', age: 92, roles: ['super-admin', 'admin', 'moderator', 'user']};
+
+    // Insert some users
+    collection.insert([user1, user2, user3], function (err, result) {
+      if (err) {
+        console.log(err);
+      } else {
+        console.log('Inserted %d documents into the "users" collection. The documents inserted with "_id" are:', result.length, result);
+      }
+
+
+    //Close connection
+    db.close();
+    });
+  }
+});
