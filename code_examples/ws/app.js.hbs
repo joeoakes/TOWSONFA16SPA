@@ -15,7 +15,49 @@ app.set('view engine', 'handlebars');
 app.get('/', function (req, res) {
     res.render('home');
 });
- 
+
+app.get('/slide12', function (req, res) {
+    res.render('slide12', {
+	layout: 'slide',
+        title: "All about <p> Tags",
+        body: "<p>This is a post about &lt;p&gt; tags</p>"
+   });
+});
+
+app.get('/slide15', function (req, res) {
+    res.render('slide15', {
+        layout: 'slide',
+        people: [
+         {firstName: "Jim", lastName: "Smith"},
+         {firstName: "Jane", lastName: "Smith"},
+         {firstName: "Alan", lastName: "Smith"}
+        ],
+      helpers: {
+          list: function(items, options) {
+           var out = "<ul>";
+           for(var i=0, l=items.length; i<l; i++) {
+             out = out + "<li>" + options.fn(items[i]) + "</li>";
+           }
+           return out + "</ul>";
+         }
+      }
+   });
+});
+
+app.get('/slide17', function (req, res) {
+    res.render('slide17', {
+        layout: 'slide',
+        title: "My First Blog Post!",
+        author: {
+          id: 47,
+           name: "John Smith"
+         },
+        body: "My first post."
+   });
+});
+
+
+
 var server = app.listen(3000, function () {
     console.log("Listening on port %s...", server.address().port);
 });

@@ -1,0 +1,1 @@
+function template(locals) {var pug_html = "", pug_mixins = {}, pug_interp;pug_html = pug_html + "\u003C!DOCTYPE html\u003E\u003Chtml lang=\"en\"\u003E\u003Chead\u003E\u003C\u002Fhead\u003E\u003Cbody\u003E\u003Cdiv\u003E\u003Cp\u003EHello!\u003C\u002Fp\u003E\u003Cp\u003EWorld!\u003C\u002Fp\u003E\u003C\u002Fdiv\u003E\u003C\u002Fbody\u003E\u003C\u002Fhtml\u003E";;return pug_html;}
