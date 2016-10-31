@@ -65,7 +65,7 @@ var MongoClient = mongodb.MongoClient;
           return res.send({"result" : "failed"});
         } else {
           var collection = db.collection('users');
-	  collection.insert({"student" : "123"}); 
+	  collection.insert(student); 
           db.close();
           return res.send({"result" : "passed"});
          }  //close if
@@ -74,21 +74,26 @@ var MongoClient = mongodb.MongoClient;
 }); //Close app.get
 
 app.get("/Read", function(req, res) {
+var mongodb = require('mongodb');
+var MongoClient = mongodb.MongoClient;
     res.header("Access-Control-Allow-Origin", "*");
-    var student = {
-	"StudentID": "123",
-	"StudentName": "Joe Oakes",
-	"StudentSSN" : "5563334444",
-	"StudentEmail" : "joe.oakes@psu.edu",
-	"StudentPhone" : "2157778888"
-	}
     if(!req.query.studentID) {
         return res.send({"status": "error", "message": "missing studentID"});
     } else if(req.query.studentID != student.StudentID) {
         return res.send({"status": "error", "message": "wrong studentID"});
     } else {
-        return res.send(student);
-    }
+        var url = 'mongodb://localhost:27017/my_database_name';
+        MongoClient.connect(url, function (err, db) {
+        if (err) {
+          return res.send({"result" : "failed"});
+        } else {
+          var collection = db.collection('users');
+          var student = collection.find({"StudentID" : student.StudentID});
+          db.close();
+          return res.send(student);
+         }  //close if
+        }); //close function
+    } //close if
 
 });
 
