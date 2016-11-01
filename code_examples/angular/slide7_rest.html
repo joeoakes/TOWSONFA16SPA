@@ -1,4 +1,4 @@
-CTYPE html><html xmlns="http://www.w3.org/1999/xhtml">
+<DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml">
 <head><title>Angular Rest Read All</title>
 <!--Using a content delivery network - watch if they go down so does your site-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
@@ -7,11 +7,11 @@ CTYPE html><html xmlns="http://www.w3.org/1999/xhtml">
   <body data-ng-app>
     <form data-ng-submit="submit()" data-ng-controller="Ctrl">
     <p data-ng-repeat="student in students">
-        Student ID: {{ student.fldStudentID }}
-        Student Name: {{ student.fldStudentName }} 
-        Student SSN: {{ student.fldStudentSSN }} 
-        Student Email: {{ student.fldStudentEmail }} 
-        Student Phone: {{ student.fldStudentPhone }} </p>
+        Student ID: {{ student.StudentID }}
+        Student Name: {{ student.StudentName }} 
+        Student SSN: {{ student.StudentSSN }} 
+        Student Email: {{ student.StudentEmail }} 
+        Student Phone: {{ student.StudentPhone }} </p>
     <p><input type="submit" id="submit" value="Submit" /></p>
 </body>
 <script>

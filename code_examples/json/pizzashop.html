@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-----------------------------JQUERY AREA----------------------->
+    <!--CDN Content Delivery Network-->
+    <!--Load the jquery minified version: no comments, no whitespace, streamed-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <!--<script src="scripts/jquery.min.js"></script>-->
+    <!--Get Locally from our Server-->
+    <!--<script src="scripts/jquery.js"></script>-->
+
+    <!-----------------------------JSON DATA AREA----------------------->
+    <script>
+        var menuItems = [
+            {"itemID": 1,"pizzaType": "Meat Lovers","cost": 10.00},
+            {"itemID": 2,"pizzaType": "Veg Lovers", "cost": 11.00 },
+            {"itemID": 3,"pizzaType": "Pan Thick", "cost": 12.00 },
+            {"itemID": 4,"pizzaType": "Hot Fire", "cost": 11.00 },
+            {"itemID": 5,"pizzaType": "3 Toppings", "cost": 15.99 },
+        ];
+    </script>
+    
+    <!-----------------------------META DATA AREA----------------------->
+    <!--Meta tags can provide search engines with information about the site-->
+    <!--Metadata is always passed as name/value pairs.-->
+    <meta charset="utf-8" />
+    <meta name="description" content="Pizza Shop">
+    <meta name="keywords" content="Pizza, ">
+    <meta name="author" content="Joe Oakes">
+    
+    <!-----------------------------CSS STYLE RULES AREA------------------>
+    <!--This is an external style sheet reference-->
+    <link rel="stylesheet" type="text/css" href="styles/common.css" />
+    <title>Pizza Shop</title>
+    <!--This is an internal/embedded style sheet rule -->
+    <style type="text/css">
+        h1 {
+            color: blue !important; 
+            /*text-align: center;*/
+        }
+    </style>
+</head>
+<body>
+    <!-----------------------------HEADER AREA----------------------->
+    <header>
+        <img src="Resources/pizza.PNG" alt="pizza logo" height="100" width="100">
+        <!-----------------------------NAVIGATION AREA----------------------->
+        <nav>
+            <div>
+                <ul>
+                    <li><a href="#home" id="navHome" class="links" rel="home">Pizza Shop Home</a></li>
+                    <li><a href="#menu" id="navMenu" class="links" rel="menu">Pizza Shop Menu</a></li>
+                    <li><a href="#about" id="navAbout" class="links" rel="about">Pizza Shop About</a></li>
+                </ul>
+            </div>
+        </nav>
+        </header>
+        <!-----------------------------HOME AREA----------------------------->
+        <div id="home" style="display:block">
+            <h1>Home Page Section</h1>
+            <aside>sidebar</aside>
+            <section>distinct title and region</section>
+            <!--<article>self-contained composition (syndication) in a doc</article>-->
+            <img id="cocacola" />
+        </div>
+        <!-----------------------------MENU AREA----------------------------->
+        <div id="menu" style="display:none">
+            <h1>Menu Page Section</h1>
+            <aside>sidebar</aside>
+            <section>distinct title and region</section>
+            <article>self-contained composition (syndication) in a doc</article>
+        </div>
+        <!-----------------------------ABOUT AREA---------------------------->
+        <div id="about" style="display:none">
+            <h1>About Page Section</h1>
+            <aside>sidebar</aside>
+            <section>distinct title and region</section>
+            <article>self-contained composition (syndication) in a doc</article>
+        </div>
+        <!-----------------------------TERMS AREA----------------------------->
+        <div id="terms" style="display:none">
+            <h1>Terms Page Section</h1>
+        </div>
+        <!-----------------------------SITE AREA----------------------------->
+        <div id="site" style="display:none">
+            <h1>Site Map Page Section</h1>
+        </div>
+        <!-----------------------------CONTACT AREA---------------------------->
+        <div id="contact" style="display:none">
+            <h1>Contact Page Section</h1>
+        </div>
+        <!-----------------------------FOOTER AREA---------------------------->
+        <footer>
+            <div>
+                <ul>
+                    <li>White Rabbit Studios&copy; 2015</li>
+                    <li><a href="#terms" id="ftrTerms">Terms of Use</a></li>
+                    <li><a href="#site" id="ftrSite">Site Map</a></li>
+                    <li><a href="#contact" id="ftrContact">Contact Us</a></li>
+                </ul>
+            </div>
+        </footer>
+        <!-----------------------------JAVASCRIPT AREA----------------------->
+        <script>
+            //When the DOM document is loaded in the browser
+            $(document).ready(function () {
+                //When home link is clicked show home area
+                $("#navHome").click(function (event) {
+                    $("#home").show();
+                    $("#menu, #about, #terms, #site, #contact").hide();
+                });
+                //When menu link is clicked show menu area
+                $("#navMenu").click(function (event) {
+                    $("#menu").show();
+                    $("#home, #about, #terms, #site, #contact").hide();
+                });
+                //When about link is clicked show about area
+                $("#navAbout").click(function (event) {
+                    $("#about").show();
+                    $("#home, #menu, #terms, #site, #contact").hide();
+                });
+                //When terms link is clicked show terms area
+                $("#ftrTerms").click(function (event) {
+                    $("#terms").show();
+                    $("#home, #menu, #about, #site, #contact").hide();
+                });
+                //When site link is clicked show site area
+                $("#ftrSite").click(function (event) {
+                    $("#site").show();
+                    $("#home, #menu, #about, #terms, #contact").hide();
+                });
+                //When contact link is clicked show contact area
+                $("#ftrContact").click(function (event) {
+                    $("#contact").show();
+                    $("#home, #menu, #about, #terms, #site").hide();
+                });
+                //Load the Menu Area with the JSON data
+                for (var i in menuItems){
+                    $("#menu").append("<div>"
+                        + "Type: " + menuItems[i].pizzaType
+                        + "Cost: " + menuItems[i].cost.toFixed(2)
+                        + "</div>");
+                 }
+                Get JSON data from Data
+                $.getJSON("Data/menu.json")
+                   .done(function (json) {
+                       //$("#menu").html("<div>" + json.menu[0].pizzaType + "</div>");
+                   })
+                   .fail(function () {
+                       alert("Error connecting to menu.json")
+                   });
+            });
+        </script>
+
+</body>
+</html>

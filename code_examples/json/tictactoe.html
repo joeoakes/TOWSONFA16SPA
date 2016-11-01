@@ -1,0 +1,211 @@
+<html xmlns="http://www.w3.org/1999/xhtml" >
+
+<head>
+
+    <title>Tic Tac Toe</title>
+
+        <script type="text/javascript"
+
+    src="http://code.jquery.com/jquery-latest.js"></script>
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            //Clear all disabled buttons
+
+            $("#XO input").val('').removeAttr('disabled');
+
+            //Set all the Buttons Size
+
+            $("#XO input").css({ 'height': '100px', 'width': '100px' });
+
+            //Check all buttons to be clicked
+
+            $("#XO input").click(function () {
+
+                $(this).val('X').css({ 'font-size': '50px' });
+
+                $(this).attr('disabled', 'disabled');
+
+                checkWinner();
+
+            });
+
+            function checkWinner() {
+
+                if ((($("#btn1").val() == 'X') && ($("#btn2").val() == 'X') && ($("#btn3").val() == 'X')) ||
+
+                   (($("#btn4").val() == 'X') && ($("#btn5").val() == 'X') && ($("#btn6").val() == 'X')) ||
+
+                   (($("#btn7").val() == 'X') && ($("#btn8").val() == 'X') && ($("#btn9").val() == 'X')) ||
+
+                   (($("#btn1").val() == 'X') && ($("#btn4").val() == 'X') && ($("#btn7").val() == 'X')) ||
+
+                   (($("#btn2").val() == 'X') && ($("#btn5").val() == 'X') && ($("#btn8").val() == 'X')) ||
+
+                   (($("#btn3").val() == 'X') && ($("#btn6").val() == 'X') && ($("#btn9").val() == 'X')) ||
+
+                   (($("#btn1").val() == 'X') && ($("#btn5").val() == 'X') && ($("#btn9").val() == 'X')) ||
+
+                   (($("#btn3").val() == 'X') && ($("#btn5").val() == 'X') && ($("#btn7").val() == 'X'))) {
+
+                    alert("You Won");
+
+                    $("#XO input").val('').removeAttr('disabled');
+
+                }
+
+                else {
+
+                    //Computers turn
+
+                    var randNum = getRandomInt(1, 9);
+
+                    switch (randNum) {
+
+                        case 1:
+
+                            $("#btn1").val('O').css({ 'font-size': '50px' });
+
+                            $("#btn1").attr('disabled', 'disabled');
+
+                            break;
+
+                        case 2:
+
+                            $("#btn2").val('O').css({ 'font-size': '50px' });
+
+                            $("#btn2").attr('disabled', 'disabled');
+
+                            break;
+
+                        case 3:
+
+                            $("#btn3").val('O').css({ 'font-size': '50px' });
+
+                            $("#btn3").attr('disabled', 'disabled');
+
+                            break;
+
+                        case 4:
+
+                            $("#btn4").val('O').css({ 'font-size': '50px' });
+
+                            $("#btn4").attr('disabled', 'disabled');
+
+                            break;
+
+                        case 5:
+
+                            $("#btn5").val('O').css({ 'font-size': '50px' });
+
+                            $("#btn5").attr('disabled', 'disabled');
+
+                            break;
+
+                        case 6:
+
+                            $("#btn6").val('O').css({ 'font-size': '50px' });
+
+                            $("#btn6").attr('disabled', 'disabled');
+
+                            break;
+
+                        case 7:
+
+                            $("#btn7").val('O').css({ 'font-size': '50px' });
+
+                            $("#btn7").attr('disabled', 'disabled');
+
+                            break;
+
+                        case 8:
+
+                            $("#btn8").val('O').css({ 'font-size': '50px' });
+
+                            $("#btn8").attr('disabled', 'disabled');
+
+                            break;
+
+                        case 9:
+
+                            $("#btn9").val('O').css({ 'font-size': '50px' });
+
+                            $("#btn9").attr('disabled', 'disabled');
+
+                            break;
+
+                    }
+
+                    checkComputerWin();
+
+                }
+
+            };
+
+            function getRandomInt(min, max) {
+
+                return Math.floor(Math.random() * (max - min + 1)) + min;
+
+            };
+
+            function checkComputerWin() {
+
+                if ((($("#btn1").val() == 'O') && ($("#btn2").val() == 'O') && ($("#btn3").val() == 'O')) ||
+
+                   (($("#btn4").val() == 'O') && ($("#btn5").val() == 'O') && ($("#btn6").val() == 'O')) ||
+
+                   (($("#btn7").val() == 'O') && ($("#btn8").val() == 'O') && ($("#btn9").val() == 'O')) ||
+
+                   (($("#btn1").val() == 'O') && ($("#btn4").val() == 'O') && ($("#btn7").val() == 'O')) ||
+
+                   (($("#btn2").val() == 'O') && ($("#btn5").val() == 'O') && ($("#btn8").val() == 'O')) ||
+
+                   (($("#btn3").val() == 'O') && ($("#btn6").val() == 'O') && ($("#btn9").val() == 'O')) ||
+
+                   (($("#btn1").val() == 'O') && ($("#btn5").val() == 'O') && ($("#btn9").val() == 'O')) ||
+
+                   (($("#btn3").val() == 'O') && ($("#btn5").val() == 'O') && ($("#btn7").val() == 'O'))) {
+
+                    alert("Computer Won");
+
+                    $("#XO input").val('').removeAttr('disabled');
+
+                }
+
+            };
+
+        });
+
+   </script>
+
+</head>
+
+<body>
+
+<div id="XO">
+
+    <input type="button" id="btn1" />
+
+    <input type="button" id="btn2" />
+
+    <input type="button" id="btn3" /><br /><br />
+
+    <input type="button" id="btn4" />
+
+    <input type="button" id="btn5" />
+
+    <input type="button" id="btn6" /><br /><br />
+
+    <input type="button" id="btn7" />
+
+    <input type="button" id="btn8" />
+
+    <input type="button" id="btn9" /><br />
+
+</div>
+
+</body>
+
+</html>
