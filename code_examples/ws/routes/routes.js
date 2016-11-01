@@ -123,7 +123,34 @@ var MongoClient = mongodb.MongoClient;
     }); //close else
 });//Close app.get
 
+app.post("/CreateStudent", function(req, res) {
+var mongodb = require('mongodb');
+var MongoClient = mongodb.MongoClient;
 
+  res.header("Access-Control-Allow-Origin", "*");
+  if(!req.query.studentName) {
+        return res.send({"status": "error", "message": "missing student Name"});
+    } else {
+    var student = {
+        "StudentID": "123",
+        "StudentName": req.query.studentName,
+        "StudentSSN" : req.query.studentSSN,
+        "StudentEmail" : req.query.studentEmail,
+        "StudentPhone" : req.query.studentPhone
+        } //Close student
+        var url = 'mongodb://localhost:27017/my_database_name';
+        MongoClient.connect(url, function (err, db) {
+        if (err) {
+          return res.send({"result" : "failed"});
+        } else {
+          var collection = db.collection('users');
+          collection.insert(student);
+          db.close();
+          return res.send({"result" : "passed"});
+         }  //close if
+        }); //close function
+    } //close else
+}); //Close app.get
 
 app.post("/account", function(req, res) {
     if(!req.body.username || !req.body.password || !req.body.twitter) {

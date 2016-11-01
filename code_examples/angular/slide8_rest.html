@@ -1,4 +1,4 @@
-<DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head><title>Angular Rest Create</title>
 <!--Using a content delivery network - watch if they go down so does your site-->
@@ -29,9 +29,9 @@
             $.ajax({
                 url: query,
                 contentType: "application/json; charset=utf-8",
-                crossDomain: true,
                 data: JSON.stringify(tblStudent),
                 dataType: 'json',
+                crossOrigin: true,
                 processData: true,
                 type: 'POST'
             })
