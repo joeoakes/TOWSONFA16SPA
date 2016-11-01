@@ -79,8 +79,6 @@ var MongoClient = mongodb.MongoClient;
     res.header("Access-Control-Allow-Origin", "*");
     if(!req.query.studentID) {
         return res.send({"status": "error", "message": "missing studentID"});
-    } else if(req.query.studentID != student.StudentID) {
-        return res.send({"status": "error", "message": "wrong studentID"});
     } else {
         var url = 'mongodb://localhost:27017/my_database_name';
         MongoClient.connect(url, function (err, db) {
@@ -88,14 +86,14 @@ var MongoClient = mongodb.MongoClient;
           return res.send({"result" : "failed"});
         } else {
           var collection = db.collection('users');
-          var student = collection.find({"StudentID" : student.StudentID});
-          db.close();
-          return res.send(student);
-         }  //close if
-        }); //close function
-    } //close if
-
-});
+            collection.find({"StudentID" : req.query.studentID}).toArray(function(error, students){
+            db.close();
+            return res.send(students);
+          });
+         } //close else
+       }); //close function
+    } //close else
+});//Close app.get
 
 app.get("/Update", function(req, res) {
     res.header("Access-Control-Allow-Origin", "*");
